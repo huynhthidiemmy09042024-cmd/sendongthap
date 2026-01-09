@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HỢP TÁC XÃ SEN ĐỒNG THÁP MƯỜI</title>
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fefbe9;
+      color: #333;
+    }
+
+    header {
+      background: #fdd835;
+      color: #00695c;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #aed581;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #1b5e20;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      display: none;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #c8e6c9;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f4c3;
+    }
+
+    .image-box {
+      text-align:center ;
+      margin: 20px  0;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      border-radius: 6px ;
+    }
+
+    .caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .product-list {
+      display:flex ;
+      flex-wrap:wrap ;
+      gap:5px ;
+      margin-top:auto  ;
+      
+    }
+
+    .product {
+      flex: 1 1 200px ;
+      border: 1px  solid #ccc;
+      border-radius: 10px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .product img {
+      width:100% ; 
+      border-radius:10px ;
+      margin-bottom: 15px ;
+    }
+
+    .product h3 {
+      margin: 0 0 8px;
+      color: #2e7d32;
+    }
+
+    .product p {
+      margin:10px 0;
+      line-height: 1.5  ;
+    }
+
+    .product .price {
+      font-weight: bold;
+      margin-top:12px ;
+    }
+
+    .button {
+      display:inline-block ;
+      background: orange ;
+      color: #fff;
+      padding:6px 10px ;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top:auto ;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #388e3c;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      background: orange ;
+      color: #fff;
+      padding:10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #388e3c;
+    }
+
+    footer {
+      background: orange ;
+      color: #004d40;
+      text-align:center ;
+      padding:15px ;
+      margin-top:auto ;
+      font-size: 0.95rem;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Kiểu cho Menu điều hướng */
+.menu {
+    background-color: #ffd700; /* Màu vàng giống trong ảnh */
+    padding: 10px;
+    text-align: right;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Kiểu cho phần Giới thiệu chung */
+.team-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    color: #008000; /* Màu xanh lá cây */
+}
+
+/* Container chứa các thẻ thành viên */
+.team-container {
+    display: flex;
+     flex-wrap:wrap ;
+    justify-content: center ;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Kiểu cho từng thẻ thành viên (Card) */
+.team-member-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-member-card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #008000;
+}
+
+.team-member-card h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.team-member-card .role {
+    color: #008000;
+    font-size: 0.9em;
+    margin: 0 0 15px 0;
+}
+
+.team-member-card .quote {
+    font-style: italic;
+    color: #666;
+    font-size: 0.8em;
+}
+
+  </style>
+  
+</head>
+
+<body>
+  <header>
+    <h1>HỢP TÁC XÃ SEN ĐỒNG THÁP MƯỜI</h1>
+    <p><b>Thanh khiết hương sen miền Tây - Tự hào nông sản Đồng Tháp</b></p>
+  </header>
+
+  <nav>
+    <a onclick="showSection('home')">Trang chủ</a>
+    <a onclick="showSection('products')">Sản phẩm & Bảng giá</a>
+    <a onclick="showSection('processed')">Sản phẩm chế biến</a>
+    <a onclick="showSection('contact')">Liên hệ đặt hàng</a>
+    <a onclick="showSection ('team ')">Nhóm sáng tạo nội dung</a>
+    <a onclick="showSection('order')">Đặt hàng</a>
+  </nav>
+
+  <!-- Trang chủ -->
+  <div id="home" class="section active">
+    <h2>🌸<b> Sen – Biểu tượng văn hóa và tâm hồn</b></h2>
+   <img src="https://www.dropbox.com/scl/fi/vbp7z1whkrtik8w0dihbi/s1.jpg?rlkey=kegq50tifxk1r3rnl2fuwx88z&st=kpcbbry2&raw=1" alt="Sen Đồng Tháp Mười " width="1000 "height="500 "></a>
+    <p> Hoa sen Đồng Tháp Mười tượng trưng cho:<br> • Sự thanh cao, thuần khiết –<i> “Gần bùn mà chẳng hôi tanh mùi
+      bùn”</i><br> • Ý chí vươn lên mạnh mẽ giữa điều kiện khắc nghiệt<br> • Nét đẹp bình dị, mộc mạc của con người miền Tây
+    </p>
+    <p> Hình ảnh cánh đồng sen bát ngát, hương sen lan tỏa trong gió đã trở thành dấu ấn khó quên trong lòng du khách
+      gần xa. </p>
+    <h2>🌿 Giá trị kinh tế & sản phẩm từ sen</h2>
+    <p> Từ sen Đồng Tháp Mười, người dân đã tạo ra nhiều sản phẩm chất lượng cao: </p>
+    <ul>
+      <li>🌱 Hạt sen tươi, sen sấy, mứt sen</li>
+      <li>🍵 Trà sen, tim sen</li>
+      <li>🌸 Ngó sen, củ sen cho ẩm thực</li>
+      <li>🎁 Sản phẩm thủ công & quà lưu niệm từ sen</li>
+    </ul>
+    <p> Mỗi sản phẩm đều mang trong mình hương vị tự nhiên, an toàn và đậm đà bản sắc miền Tây. </p>
+    <h2>🏞️ Sen gắn với du lịch sinh thái</h2>
+    <p> Những cánh đồng sen trải dài bát ngát không chỉ mang lại sinh kế cho người dân mà còn là điểm đến lý tưởng cho:
+    </p>
+    <ul>
+      <li>Du lịch sinh thái</li>
+      <li>Chụp ảnh</li>
+      <li>Trải nghiệm đời sống nông dân</li>
+      <li>Thưởng thức ẩm thực địa phương</li>
+    </ul>
+    <h2>❤️ Sen Đồng Tháp Mười – Nâng niu giá trị Việt</h2>
+    </p>
+    <div class="image-box">
+    <video width="100% " height="auto "controls>
+     <source src ="https://www.dropbox.com/scl/fi/0zewkit3fk32ctjgmezhx/Untitled-design-2.mp4?rlkey=ni83g7vm1dtix6hxvzjlbi7r2&st=cxzn5wj0&raw=1 "type="video/mp4 "></video>
+      <div class ="caption"> Hình ảnh đầm sen vào mùa nở rộ ở Đồng Tháp </div>
+        <p><b> Chúng tôi mong muốn lan tỏa vẻ đẹp , hương thơm , và giá trị bền vững của Sen Đồng Tháp đến với mọi miền đất nước à bạn bè quốc tế , góp phần gìn giữ nét đẹp truyền thống và phát triển kinh tế địa phương </b></p>
+    </div>
+  </div>
+  <!-- Sản phẩm & Bảng giá -->
+  <div id="products" class="section">
+    <h2>Danh Mục Sản Phẩm </h2>
+    <ul>
+      <li>Hạt sen tươi : <i> hạt to , mẩy , vị bùi ngọt , dùng nấu chè , súp , cháo , hoặc hầm thuốc bắc </i></li>
+      <li>Hạt sen khô: <i>được phơi/sấy tự nhiên, dễ bảo quản, tiện sử dụng lâu dài.</i></li>
+      <li>Ngó sen tươi:<i> Giòn, ngọt, thích hợp làm gỏi, xào, nấu canh chua.</i></li>
+      <li>Củ sen (ngẫu sen): <i>Giàu chất xơ, giòn mát, dùng nấu canh, hầm, chiên hoặc kho.</i></li>
+      <li>Lá sen tươi:<i> Thường dùng gói xôi, hấp thực phẩm hoặc phơi khô làm trà.</i></li>
+      <li>Gương sen:<i> Có thể dùng trang trí, ngâm rượu hoặc phơi khô làm dược liệu.</i></li>
+      <li>Hoa sen tươi:<i> Phục vụ ướp trà, cắm trang trí hoặc sử dụng trong nghi lễ.</i></li>
+    </ul>
+    <h3>Bảng giá niêm yết</h3>
+    <table>
+      <tr>
+        <th>STT</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá bán</th>
+        <th>Ghi chú</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Hạt sen tươi</td>
+        <td>60.000-80.000/kg </td>
+        <td>Loại 1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Hạt sen khô </td>
+        <td>180.000-220.000/kg </td>
+        <td>Nấu chè </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ngó sen tươi </td>
+        <td>30.000-40.000/kg </td>
+        <td>Làm gỏi </td>
+
+      </tr>
+      <tr>
+        <td>4 </td>
+        <td>Củ sen </td>
+        <td>25.000-35.000/kg </td>
+        <td>Hầm canh </td>
+        
+      </tr>
+      <tr>
+        <td>5 </td>
+        <td>Lá sen tươi </td>
+        <td>5.000-10.000/lá </td>
+        <td>Gối xôi </td>
+        
+      </tr>
+      <tr>
+        <td>6 </td>
+        <td>Gương sen </td>
+        <td>10.000-15.000/kg </td>
+        <td>Trang trí </td>
+        
+      </tr>
+      <tr>
+        <td>7 </td>
+        <td>Hoa sen tươi </td>
+        <td>15.000-25.000/bông </td>
+        <td>Trang trí </td>
+        
+      </tr>
+    </table>
+  </div>
+
+  <!-- Sản phẩm chế biến -->
+  <div id="processed" class="section">
+    <h2>Sản phẩm OCOP tiêu biểu</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src='https://i.postimg.cc/76WZzRC4/sp1.jpg' border='0' alt='Cốm Sen '></a>
+        <h3>An Cốm Sen </h3>
+        <p>CỐM SEN .
+          <br>Bánh gạo nướng An vị Cốm Sen – Orion kết hợp cốm Hà Thành & hương sen ngọt bùi, bánh to, dày, giòn, phủ cốm dẹp xanh, sản xuất dây chuyền hiện đại, phù hợp ăn nhẹ, tráng miệng, dã ngoại.</p>
+          <br>🌸 Thích hợp dùng hằng ngày hoặc làm quà biếu<br>
+        </p>
+        <p class="price">Giá:33.000 VND /Túi 12 gói </p>
+        <a onclick="openOrder('Cốm Sen')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+        <img src='https://i.postimg.cc/T3KMLPVn/sp2.jpg' border='0' alt='sp2'></a>
+        <h3>Hạt Sen Nước Đường </h3>
+        <p>🍮Hạt Sen Nước Đường 
+          <br>Hạt Sen Nước Đường Lotus Food hạt sen chế biến sẵn, ngâm nước đường thanh ngọt, mềm bùi tự nhiên, dùng trực tiếp hoặc pha trà, nấu chè, đạt ISO – HACCP – FDA.<br>
+          <br>🟢Ngon hơn khi dùng lạnh<br>
+        </p>
+        <p class="price">Giá: 65.000 VND / Hũ 600g </p>
+
+
+        <a onclick="openOrder('Hạt Sen Nước Đường ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+        <img src='https://i.postimg.cc/6p2g6mK0/sp3.jpg' border='0' alt='sp3'></a>
+        <h3>Cơm Tươi Hạt Sen </h3>
+        <p>Cơm tươi hạt sen AK Rice 150 g làm từ gạo ST25 dẻo thơm, hâm nóng 90 giây, không gluten, thuần chay, giàu dinh dưỡng, không chất bảo quản. </p>
+        <p class="price">Giá:17.200 VND / Túi 150g </p>
+        <a onclick="openOrder('Cơm Tươi Hạt Sen')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+        <img src='https://i.postimg.cc/ydPrrqmv/sp4.jpg' border='0' alt='sp4'></a><br><a href='https://postimages.org/vi/'></a><br>
+        <h3>Hạt Sen Sấy </h3>
+        <p>Hạt sen sấy khô Xuân Hồng , đạt ISO 9001:2015 & HACCP, “Vị Xuân Hồng” truyền thống, giàu dinh dưỡng, tốt cho sức khỏe.</p>
+        <p class="price">136.500 VND / 180g </p>
+        <a onclick="openOrder('Hạt Sen Sấy ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+        <img src='https://i.postimg.cc/tRvB1N2h/sp5.jpg' border='0' alt='sp5'></a>
+        <h3>Trà Hạt Sen Mật Ong </h3>
+        <p>Trà sen bình vôi mật ong Vị Á dạng viên, 20 viên/hộp (15 g/viên), kết hợp sen – bình vôi – mật ong tự nhiên, hỗ trợ viêm họng, tiêu hóa, tăng sức đề kháng, đạt ISO 22000, không đường hóa học, không chất bảo quản, không màu nhân tạo.</p>
+        <p class="price">112.000 VND /Hộp </p>
+        <a onclick="openOrder('Trà Sen Mật Ong ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+       <img src='https://i.postimg.cc/xdPR9vXJ/sp6.jpg' border='0' alt='sp6'></a>
+        <h3>Trà Tim Sen </h3>
+        <p>Trà Tim Sen Hùng Phát gồm tim sen, cam thảo, bạch mao, hồng trà, giúp thư giãn, dễ ngủ, tốt cho người hay lo lắng; không hương liệu, không phẩm màu; 50 g (25 gói x 2 g).</p>
+        <p class="price">40.000 VND/Hộp </p>
+        <a onclick="openOrder('Trà Tim Sen ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+       <img src='https://i.postimg.cc/52bgTKth/sp7.jpg' border='0' alt='sp7'></a>
+        <h3>Bột Gạo Lức Hạt Sen </h3>
+        <p>Sản phẩm trong hình là Bột Gạo Lứt Hạt Sen Co.op Select 350g. 
+           Thành phần chính gồm 45% gạo lứt và 10% hạt sen.
+           Thơm ngon, bổ dưỡng, được sử dụng để uống liền.
+           Pha một gói 35g với 120ml nước nóng để dùng.
+           Khối lượng tịnh 350g </p>
+        <p class="price">34.000 VND/Hộp</p>
+        <a onclick="openOrder('Bột gạo lức hạt sen ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+         <img src='https://i.postimg.cc/kGWNhWP9/sp8.jpg' border='0' alt='sp8'></a>
+        <h3>Bột Hạt Sen Đậu Xanh </h3>
+        <p>Sản phẩm trong hình là Bột Đậu Xanh Hạt Sen Co.op Select 350g. 
+          Thành phần chính : Đậu xanh và hạt sen.
+           Đặc điểm: Thơm ngon, bổ dưỡng và ít ngọt hơn.
+           Quy cách đóng gói: Hộp 350g gồm 10 gói nhỏ 35g.
+           Nhà sản xuất: Co.op Select.</p>
+        <p class="price">34.000 VND/Hộp </p>
+        <a onclick="openOrder('Bột Đậu Xanh Hạt Sen ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+       <<img src='https://i.postimg.cc/zvYKW3b9/sp9.jpg' border='0' alt='sp9'></a>
+        <h3>Hương Vị Sen </h3>
+        <p>Hạt nêm Aji-ngon nấm hương & hạt sen – Ajinomoto làm từ nấm hương, hạt sen, rau củ thiên nhiên, vị ngọt thanh đậm đà, dùng cho món chay và mặn, nêm canh – xào – ướp – kho, 200 g.</p>
+        <p class="price">20.900 VND/Túi </p>
+        <a onclick="openOrder('Hạt nêm sen ')" class="button">Đặt mua ngay</a>
+      </div>
+      <div class="product">
+      <img src='https://i.postimg.cc/JzzJjf08/sp10.jpg' border='0' alt='sp10'></a>
+        <h3>Cháo Tươi Chim Cút Hạt Sen </h3>
+        <p>Cháo tươi Chim cút hạt sen – SG Food
+Cháo dinh dưỡng nấu từ 100% nguyên liệu tươi, không chất bảo quản, tươi ngon như mới nấu. Khối lượng 240 g, phù hợp cho trẻ từ 12 tháng tuổi trở lên, có thể bổ sung cùng sữa mẹ cho trẻ trên 6 tháng.</p>
+        <p class="price">44.000 VND/Túi </p>
+        <a onclick="openOrder('Cháo Tươi Hạt Sen ')" class="button">Đặt mua ngay</a>
+      </div>
+    </div>
+  </div>
+  <div id="team "class ="section ">
+        <h1>NHÓM SÁNG TẠO NỘI DUNG</h1>
+        <p>Dự án được thực hiện bởi Nhóm CHẤT SEN  - Lớp 12C1  - THPT Cao Lãnh 1</p>
+    <video width="100% " height="auto "controls>
+     <source src ="https://www.dropbox.com/scl/fi/v7sadr5mutlfuh54xptmi/08012026-2.mp4?rlkey=018rhzj4mxp19foqjv4fsow56&st=4ipsqjca&raw=1 "type="video/mp4 "></video>
+      <div class ="caption"> Hành Trình CHẤT SEN </div>
+        <div class="team-container">
+            <!-- Thành viên A -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-a.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/JhwrRXfz/team1.jpg' border='0' alt='team1'>
+                <h3>Huỳnh Hữu Nghĩa </h3>
+                <p class="role">Trưởng Dự Án (PM) </p>
+                <p class="quote">"Hãy sống như hoa sen, nở rộ trong bùn lầy nhưng vẫn giữ được vẻ đẹp và sự thuần khiết"</p>
+            </div>
+
+            <!-- Thành viên B -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-b.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/0NNTRyQq/team2.jpg' border='0' alt='team2'>
+                <h3>Nguyễn Thị Tâm Đoan </h3>
+                <p class="role">Thuyết Trình & Chuyên Viên Quảng Cáo </p>
+                <p class="quote">"Lan toả tinh hoa Việt, đậm chất hồn sen"</p>
+            </div>
+
+            <!-- Thành viên C -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+               <img src='https://i.postimg.cc/ZKcsbzX3/team3.jpg' border='0' alt='team3'>
+                <h3>Huỳnh Thị Diễm My </h3>
+                <p class="role">Trưởng Kỹ Thuật(HTML) & Lập Trình Viên (Coder) </p>
+                <p class="quote">"Bùn không làm sen thấp đi , chỉ chứng minh sen đủ lực để vươn cao" </p>
+            </div>
+
+            <!--Thành viên D-->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/rmxg7BSk/team4.jpg' border='0' alt='team4'>
+                <h3>Nguyễn Ngọc Tiền </h3>
+                <p class="role">Thiết Kế Giao Diện (CSS) </p>
+                <p class="quote">"Hãy để cuộc đời em là một bản giao hưởng không có nốt kết thúc, chỉ có những chương rực rỡ nối tiếp nhau"</p>
+            </div>
+            <!--Thành viên E -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/G3jxYJKW/team5.jpg' border='0' alt='team5'>
+                <h3>Phạm Thị Ngọc Hân </h3>
+                <p class="role">Trưởng Nội Dung </p>
+                <p class="quote">"Không có những thứ mình yêu, hãy yêu những thứ mình có"</p>
+            </div>
+             <!--Thành viên  -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+               <img src='https://i.postimg.cc/6q6RzgcP/team6.jpg' border='0' alt='team6'>
+                <h3>Trần Thanh Tài </h3>
+                <p class="role">Chuyên Viên Thông Tin </p>
+                <p class="quote">“Hiểu đúng về Sen để trân trọng bản sắc Việt.”</p>
+            </div>
+            <!--Thành viên  -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/Tw05yQxh/team7.jpg' border='0' alt='team7'>
+                <h3>Nguyễn Hồng Nhung(25/10) </h3>
+                <p class="role">Nhiếp Ảnh Gia </p>
+                <p class="quote">“Ghi lại những khoảnh khắc chân thật bằng cảm xúc”</p>
+            </div>
+            <!--Thành viên  -->
+            <div class="team-member-card">
+                <!-- Thay thế 'placeholder-c.jpg' bằng ảnh thật -->
+                <img src='https://i.postimg.cc/fLmxNvXk/z7413738832888-7a07e27858cf66cc835e0e380aac0a58.jpg' border='0' alt='z7413738832888-7a07e27858cf66cc835e0e380aac0a58'></a>
+                <h3>Nguyễn Ngọc Mai Quỳnh </h3>
+                <p class="role">Biên Tập Video & Logo </p>
+                <p class="quote">Sống chậm hơn và yêu thương nhiều hơn"</p>
+            </div>
+        </div>
+      </div>
+  <!-- Liên hệ -->
+  <div id="contact" class="section">
+    <h2>Liên hệ đặt hàng</h2>
+    <p>Địa chỉ: Ấp 2, xã Mỹ Thọ,Cao Lãnh, tỉnh Đồng Tháp</p>
+    <p>Điện thoại:0968048225 </p>
+    <p>Email:huynhthidiemmy09042024@gmail.com </p>
+  </div>
+  <!-- Đặt hàng -->
+  <div id="order" class="section">
+    <h2>Đặt hàng sản phẩm</h2>
+    <p>Bạn đang đặt mua: <strong id="selectedProduct">[Chưa chọn sản phẩm]</strong></p>
+    <form>
+      <label>Họ tên:</label>
+      <input type="text" name="name" required>
+      <label>Số điện thoại:</label>
+      <input type="tel" name="phone" required>
+      <label>Địa chỉ giao hàng:</label>
+      <textarea name="address" rows="3" required></textarea>
+      <label>Số lượng:</label>
+      <input type="number" name="quantity" min="1" value="1" required>
+      <button type="submit">Gửi đơn hàng</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2026 Dự án học tập Tin học 12 - THPT Cao Lãnh
+  </footer>
+  </div>
+
+  <script>
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      const el = document.getElementById(id);
+      if (el) el.classList.add('active');
+      setTimeout(() => { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+    }
+
+    function openOrder(productName) {
+      const sel = document.getElementById('selectedProduct');
+      if (sel) sel.textContent = productName;
+      showSection('order');
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        product: document.getElementById('selectedProduct').textContent,
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        address: form.address.value.trim(),
+        quantity: form.quantity.value
+      };
+      if (!data.name || !data.phone) {
+        alert('Vui lòng điền đầy đủ họ tên và số điện thoại.');
+        return;
+      }
+      alert('Đơn hàng đã được gửi:\\n' +
+        'Sản phẩm: ' + data.product + '\\n' +
+        'Họ tên: ' + data.name + '\\n' +
+        'SĐT: ' + data.phone + '\\n' +
+        'Số lượng: ' + data.quantity);
+      form.reset();
+      document.getElementById('selectedProduct').textContent = '[Chưa chọn sản phẩm]';
+      showSection('home');
+    }
+  </script>
+</body>
+
+</html>
